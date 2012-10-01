@@ -1,0 +1,15 @@
+diff -aurN volumeicon-0.4.6.orig/src/alsa_backend.c volumeicon-0.4.6/src/alsa_backend.c
+--- volumeicon-0.4.6.orig/src/alsa_backend.c	2012-09-25 13:10:37.642315983 +0200
++++ volumeicon-0.4.6/src/alsa_backend.c	2012-09-25 13:11:26.273859953 +0200
+@@ -22,10 +22,7 @@
+ //##############################################################################
+ 
+ #include <alsa/asoundlib.h>
+-#include <glib/gstring.h>
+-#include <glib/gstdio.h>
+-#include <glib/glist.h>
+-#include <glib/giochannel.h>
++#include <glib.h>
+ 
+ #include "alsa_backend.h"
+ 
