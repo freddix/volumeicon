@@ -1,15 +1,14 @@
 Summary:	Lightweight volume control
 Name:		volumeicon
-Version:	0.4.6
-Release:	2
+Version:	0.5.0
+Release:	1
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://softwarebakery.com/maato/files/volumeicon/%{name}-%{version}.tar.gz
-# Source0-md5:	7fd6dffba823e9c529d151d4789ff992
-Patch0:		%{name}-include.patch
+# Source0-md5:	3ed1c8995331da888fd45e06896a7569
 URL:		http://softwarebakery.com/maato/volumeicon.html
 BuildRequires:	alsa-lib-devel
-BuildRequires:	gtk+-devel
+BuildRequires:	gtk+3-devel
 BuildRequires:	libnotify-devel
 BuildRequires:	pkg-config
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -19,7 +18,6 @@ Lightweight volume control.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure \
@@ -54,8 +52,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/*
+%doc AUTHORS ChangeLog README
+%attr(755,root,root) %{_bindir}/volumeicon
 %{_datadir}/%{name}
 %{_desktopdir}/volumeicon.desktop
 %{_sysconfdir}/xdg/autostart/volumeicon.desktop
